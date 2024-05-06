@@ -1,6 +1,6 @@
-!/usr/bin/bash
+#!/usr/bin/bash
 
-ip.addr="192.168.63.132" #Change Target IP as required
+ip_addr="192.168.63.132" #Change Target IP as required
 max_pings=100
 counter=0
 
