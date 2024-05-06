@@ -6,7 +6,7 @@ counter=0
 
 while [ $count -lt $max_pings ]
 do
-    if [ping -c 1 $ip_addr >/dev/null];
+    if ping -c 1 $ip_addr >/dev/null;
     then
         echo "Ping Sent"
     else
