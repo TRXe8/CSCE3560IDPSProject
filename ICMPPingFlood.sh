@@ -12,5 +12,5 @@ do
     else
         echo "Ping Failed"
     fi
-    sleep 2
+    sleep 1 #Pause added to prevent overload of the system. Works completely fine w/o pause
 done
