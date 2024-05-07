@@ -12,7 +12,7 @@ def randInt():
 
 def SYN_Flood(dstIP,dstPort,counter):
     total = 0
-    ip_list = ["6.4.19.89", "12.7.19.41", "2.24.20.22", "1.26.18.41", "9.1.19.39", "11.30.19.39", "9.17.19.91"] #Set of nonsensical IP Addresses
+    #ip_list = ["6.4.19.89", "12.7.19.41", "2.24.20.22", "1.26.18.41", "9.1.19.39", "11.30.19.39", "9.17.19.91"] Set of nonsensical IP Addresses
     print ("Sending Packets...")
   
     for x in range (0, counter):
@@ -24,7 +24,9 @@ def SYN_Flood(dstIP,dstPort,counter):
         #The original attack sends SYN packets from random IP Addresses
         #To make it easier for our IDPS to mitigate the attack,
         #We limited the scope of the attack to 7 different IPs
-        IP_Packet.src = ip_list[random.randint(0,6)]
+        #Ordinarily any IP would work, but I will cut it further down to one IP address to test easier
+        #IP_Packet.src = ip_list[random.randint(0,6)]
+        IP_Packet.src = 192.168.63.131
         IP_Sender = IP_Packet.src
         IP_Packet.dst = dstIP
 
