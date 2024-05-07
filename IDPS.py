@@ -43,7 +43,7 @@ def synMit():
                     if result == 0:
                         print(f"Successfully blocked {src_ip}")
                     else
-                    print(f"Error blocking {src_ip}")
+                        print(f"Error blocking {src_ip}")
                 elif SYN_IP_ADDR[src_ip] > 6:
                     blocked += 1
                     if blocked % 10 == 0:
