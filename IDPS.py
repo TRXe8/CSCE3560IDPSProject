@@ -6,6 +6,7 @@ def icmpMit():
     def icmp_mitigation(packet):
         if packet.haslayer(ICMP):
             src_ip = packet[IP].src
+            blocked = 0
 
             if src_ip not in ICMP_IP_ADDR:
                 ICMP_IP_ADDR[src_ip] = 1
@@ -14,7 +15,6 @@ def icmpMit():
                 if ICMP_IP_ADDR[src_ip] == 6:
                     print(f"Blocking ICMP Requests from {src_ip}")
                     result = os.system(f"sudo ufw deny proto icmp from {src_ip}")
-                    blocked = 0
                     if result == 0:
                         print(f"Successfully blocked {src_ip}")
                     else
@@ -31,6 +31,7 @@ def synMit():
     def syn_mitigation(packet):
         if packet.haslayer(TCP) and packet[TCP].flags & 2 and packet.haslayer(IP):
             src_ip = packet[IP].src
+            blocked = 0
         
             if src_ip not in SYN_IP_ADDR:
                 SYN_IP_ADDR[src_ip] = 1
@@ -39,7 +40,6 @@ def synMit():
                 if SYN_IP_ADDR[src_ip] == 6:
                     print(f"Blocking SYN requests from {src_ip}")
                     result = os.system(f"sudo ufw deny proto 80/tcp from {src_ip}")
-                    blocked = 0
                     if result == 0:
                         print(f"Successfully blocked {src_ip}")
                     else
