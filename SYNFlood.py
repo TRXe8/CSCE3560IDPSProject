@@ -24,9 +24,9 @@ def SYN_Flood(dstIP,dstPort,counter):
         #The original attack sends SYN packets from random IP Addresses
         #To make it easier for our IDPS to mitigate the attack,
         #We limited the scope of the attack to 7 different IPs
-        #Ordinarily any IP would work, but I will cut it further down to one IP address to test easier
+        #In theory, any IP would work, but I will cut it further down to one IP address to make testing easier
         #IP_Packet.src = ip_list[random.randint(0,6)]
-        IP_Packet.src = 192.168.63.131
+        IP_Packet.src = 192.168.63.131 #adjust source IP as necessary
         IP_Sender = IP_Packet.src
         IP_Packet.dst = dstIP
 
