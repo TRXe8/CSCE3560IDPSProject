@@ -10,7 +10,7 @@ def icmpMit():
             if src_ip not in ICMP_IP_ADDR:
                 ICMP_IP_ADDR[src_ip] = 1
             else:
-                ICMP_PACKET_COUNT[src_ip] += 1
+                ICMP_IP_ADDR[src_ip] += 1
                 if ICMP_IP_ADDR[src_ip] > 5:
                     print ("Blocking ICMP request from {src_ip}")
                     return
