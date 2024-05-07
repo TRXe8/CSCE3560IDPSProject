@@ -1,4 +1,4 @@
-import multiprocessing, psutil, os
+import multiprocessing, os
 from scapy.all import *
 
 def icmpMit():
